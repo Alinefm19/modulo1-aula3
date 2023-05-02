@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <form>
+        <label for="nome">Nome do cliente</label>
+        <input type="text" id="nome" placeholder="Digite o nome" required>
+        <div class="lado-a-lado">
+            <div class="lado">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Digitar o email" required>
+            </div>
+            <div class="lado">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+            </div>
+        </div>
+        <div class="lado-a-lado">
+            <div class="lado">
+                <label for="numero">Número</label>
+                <input type="number" id="numero" placeholder="000" min="0">
+            </div>
+            <div class="lado">
+                <label for="complemento">Complemento</label>
+                <input type="text" id="complemento" placeholder="Bloco, Ap, Casa">
+            </div>
+        </div>
+       
+        
+        
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" placeholder="Digite o endereço" required>
+        
+        
+        <label for="bairro">Bairro</label>
+        <input type="text" id="bairro" placeholder="Digite seu bairro" required>
+        <div class="lado-a-lado">
+            <div class="lado">
+                <label for="sabor">Escolha o sabor</label>
+                <select id="sabor">
+                    <option>Calabresa</option>
+                    <option>Peperoni</option>
+                    <option>Portugesa</option>
+                    <option>Frango Catupiri</option>
+                    <option>Mussarela</option>
+                    <option>Carne de sol</option>
+                </select>
+            </div>
+            <div class="lado">
+                <label for="pagamento">forma de pagameto</label>
+                <select id="pagamento">
+                    <option disabled selected>Escolha a forma</option>
+                    <option>Cartão</option>
+                    <option>Dinheiro</option>
+                    <option>Pix</option>
+                </select>
+            </div>
+        </div>
+       
+        <label for="obs">Obs:</label>
+        <textarea id="obs" cols="30" rows="5"></textarea>
+        <button type="submit" onclick="mandarPedido()">Enviar</button>
+       
+    </form>
+
+    <script>
+        function mandarPedido(){
+            event.preventDefault();
+            window.location.href = `https://api.whatsapp.com/send?phone=5585999053625&text=Oi%20eu%20sou%20${nome.value},%20gostaria%20de%20pedir%20uma%20pizza%20de%20${sabor.value},%20${obs.value}%20para%20entregar,%20no%20endere%C3%A7o%20${endereco.value}%20${numero.value}%20${complemento.value},%20${bairro.value},%20meus%20contatos%20s%C3%A3o%20${telefone.value}%20e%20${email.value}!`;
+        }
+    </script>
+</body>
+</html>
